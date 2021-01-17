@@ -1,8 +1,12 @@
 package pl.anril.recipeapp.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -23,4 +27,9 @@ public class Recipe {
     private Byte[] image;
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private Set<Ingredient> ingredients = new HashSet<>();
 }
