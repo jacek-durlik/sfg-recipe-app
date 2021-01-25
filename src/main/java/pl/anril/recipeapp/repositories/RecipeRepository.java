@@ -1,7 +1,7 @@
 package pl.anril.recipeapp.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.Repository;
+import pl.anril.recipeapp.domain.Recipe;
 
-public interface RecipeRepository extends CrudRepository<Repository, Long> {
+public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 }
