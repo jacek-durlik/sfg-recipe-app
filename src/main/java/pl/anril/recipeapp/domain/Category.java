@@ -1,6 +1,8 @@
 package pl.anril.recipeapp.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -16,5 +18,7 @@ public class Category {
     private String description;
 
     @ManyToMany(mappedBy = "categories")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Recipe> recipes = new HashSet<>();
 }
