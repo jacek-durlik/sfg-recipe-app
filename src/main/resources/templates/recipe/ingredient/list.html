@@ -47,6 +47,9 @@
                 <td><a href="#" th:href="@{'/recipe/' + ${recipe.id} + '/ingredient/' + ${ingredient.id} + '/update'}">Update</a></td>
                 <td><a href="#" th:href="@{'/recipe/' + ${recipe.id} + '/ingredient/' + ${ingredient.id} + '/delete'}">Delete</a></td>
               </tr>
+              <tr>
+                <a th:href="@{'/recipe/' + ${recipe.id} + '/ingredient/new'}" class="btn btn-primary" role="button">New</a>
+              </tr>
             </table>
           </div>
         </div>

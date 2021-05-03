@@ -55,4 +55,15 @@ public class IngredientController {
         recipe.getIngredients().add(savedIngredient);
         return "redirect:/recipe/" + recipeId + "/ingredient/" + savedIngredient.getId() + "/show";
     }
+
+    @RequestMapping("/recipe/{recipeId}/ingredient/new")
+    public String newIngredient(Model model, @PathVariable Long recipeId) {
+        final Recipe recipe = recipeService.findById(recipeId);
+        final Ingredient ingredient = new Ingredient();
+        ingredient.setRecipe(recipe);
+        model.addAttribute("recipe", recipe);
+        model.addAttribute("ingredient", ingredient);
+        model.addAttribute("uomList", uomService.findAll());
+        return "recipe/ingredient/ingredientform";
+    }
 }
