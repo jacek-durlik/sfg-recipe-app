@@ -27,4 +27,9 @@ public class IngredientServiceJpa implements IngredientService {
     public Ingredient save(Ingredient ingredient) {
         return ingredientRepository.save(ingredient);
     }
+
+    @Override
+    public void deleteById(Long id) {
+        ingredientRepository.deleteById(id);
+    }
 }
