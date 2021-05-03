@@ -17,4 +17,14 @@ public class IngredientServiceJpa implements IngredientService {
     public Set<Ingredient> findAllByRecipeId(Long recipeId) {
         return ingredientRepository.findAllByRecipeId(recipeId);
     }
+
+    @Override
+    public Ingredient findById(Long id) {
+        return ingredientRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Ingredient save(Ingredient ingredient) {
+        return ingredientRepository.save(ingredient);
+    }
 }
